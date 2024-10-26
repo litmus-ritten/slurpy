@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "slurpy"
+version = "0.0.0"
+description = "An unofficial Python API for the Tlon app on Urbit"
+authors = ["litmus-ritten"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.13.*"
+rich = "^13.7.1"
+colorful = "^0.5.6"
+requests = "^2.32.3"
+python-dateutil = "^2.9.0.post0"
+pydantic = "^2.8.2"
+pydantic-extra-types = "^2.9.0"
+urbitob = "^0.0.4"
+more-itertools = "^10.5.0"
+cmap = "^0.3.0"
+matplotlib = "^3.9.2"
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.29.0"
+pre-commit = "^3.8.0"
+pytest = "^8.3.2"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver2"
+version_provider = "poetry"
+update_changelog_on_bump = true
+major_version_zero = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.black]
+line-length = 120
+preview = true
+target-version = ['py313']
+include = '\.py$'

@@ -58,7 +58,8 @@ class Post(BaseModel):
         author = Point(patp=essay["author"])
         sent = tlonts2dt(essay["sent"])
         title = essay["kind-data"]["diary"]["title"]
-        image = Url(essay["kind-data"]["diary"]["image"]) if essay["kind-data"]["diary"]["image"] != "" else None
+        image_str = essay["kind-data"]["diary"]["image"]
+        image = Url(image_str) if image_str != "" else None
         content = essay["content"]
         return Post(index=index, author=author, sent=sent, title=title, image=image, content=content)
 

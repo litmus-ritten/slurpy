@@ -51,3 +51,27 @@ class InvalidPatpError(Exception):
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(message='{self.message}')"
+
+
+class UnknownChannelType(Exception):
+    """
+    Exception raised when the type of a Channel is invalid.
+
+    Attributes:
+        message (str): The error message.
+    """
+
+    def __init__(self, message: str):
+        super(UnknownChannelType, self).__init__()
+        self._message = message
+
+    @property
+    def message(self) -> str:
+        """str: The error message."""
+        return self._message
+
+    def __str__(self) -> str:
+        return f"{self.message}"
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(message='{self.message}')"

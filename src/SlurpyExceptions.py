@@ -53,7 +53,7 @@ class InvalidPatpError(Exception):
         return f"{self.__class__.__name__}(message='{self.message}')"
 
 
-class UnknownChannelType(Exception):
+class UnknownChannelTypeError(Exception):
     """
     Exception raised when the type of a Channel is invalid.
 
@@ -62,7 +62,55 @@ class UnknownChannelType(Exception):
     """
 
     def __init__(self, message: str):
-        super(UnknownChannelType, self).__init__()
+        super(UnknownChannelTypeError, self).__init__()
+        self._message = message
+
+    @property
+    def message(self) -> str:
+        """str: The error message."""
+        return self._message
+
+    def __str__(self) -> str:
+        return f"{self.message}"
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(message='{self.message}')"
+
+
+class MalformedCodeError(Exception):
+    """
+    Exception raised when a login code is of the incorrect shape.
+
+    Attributes:
+        message (str): The error message.
+    """
+
+    def __init__(self, message: str):
+        super(MalformedCodeError, self).__init__()
+        self._message = message
+
+    @property
+    def message(self) -> str:
+        """str: The error message."""
+        return self._message
+
+    def __str__(self) -> str:
+        return f"{self.message}"
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(message='{self.message}')"
+
+
+class InsecureError(Exception):
+    """
+    Exception raised when an insecure condition is entered.
+
+    Attributes:
+        message (str): The error message.
+    """
+
+    def __init__(self, message: str):
+        super(InsecureError, self).__init__()
         self._message = message
 
     @property

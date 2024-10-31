@@ -7,7 +7,7 @@ version: 2
 
 # Set the OS, Python version and other tools you might need
 build:
-  os: any
+  os: ubuntu-lts-latest
 
 # Build documentation with MkDocs
 mkdocs:

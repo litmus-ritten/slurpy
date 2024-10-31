@@ -5,6 +5,10 @@
 # Required
 version: 2
 
+# Set the OS, Python version and other tools you might need
+ 8build:
+ 9  os: any
+
 # Build documentation with MkDocs
 mkdocs:
   configuration: "mkdocs.yml"

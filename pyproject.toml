@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "slurpy"
-version = "0.0.0"
+version = "0.3.0"
 description = "An unofficial Python API for the Tlon app on Urbit"
 authors = ["litmus-ritten"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.13.*"
+python = ">=3.12.*"
 rich = "^13.7.1"
 colorful = "^0.5.6"
 requests = "^2.32.3"
@@ -17,7 +17,8 @@ pydantic-extra-types = "^2.9.0"
 urbitob = "^0.0.4"
 more-itertools = "^10.5.0"
 cmap = "^0.3.0"
-matplotlib = "^3.9.2"
+aiohttp = "^3.11.7"
+platformdirs = "^4.3.6"
 
 [tool.poetry.group.dev.dependencies]
 commitizen = "^3.29.0"
@@ -41,7 +42,7 @@ venvPath = "."
 venv = ".venv"
 
 [tool.black]
+target-version = ['py312']
 line-length = 120
 preview = true
-target-version = ['py313']
 include = '\.py$'
